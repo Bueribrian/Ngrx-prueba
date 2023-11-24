@@ -1,0 +1,11 @@
+<h1 *ngIf="loading$ | async as loading">
+    Loading...
+</h1>
+
+<h1 *ngIf="error$ | async as error">
+    {{error}}
+</h1>
+
+<ng-container *ngIf="(users$ | async) as users">
+    <pre *ngIf="users.length">{{users|json}}</pre>
+</ng-container>
